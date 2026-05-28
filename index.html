@@ -1,10 +1,258 @@
-<div class="vehicles">
-    <div class="vehicle car">🚗</div>
-    <div class="vehicle bus">🚌</div>
-    <div class="vehicle truck">🚛</div>
-    <div class="vehicle ambulance">🚑</div>
-    <!-- Ekstra yoğunluk -->
-    <div class="vehicle" style="animation: drive 11s linear infinite; top: 40px;">🚕</div>
-    <div class="vehicle" style="animation: drive 16s linear infinite; top: 70px;">🚜</div>
-    <div class="vehicle" style="animation: fastDrive 7s linear infinite; top: 10px;">🏍️</div>
-</div>
+```html
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>EhliyetPro | Trafik Terminali</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- MATRIX BG -->
+    <canvas id="matrix"></canvas>
+
+    <!-- HEADER -->
+    <header class="hero">
+
+        <div class="top-bar">
+
+            <div class="terminal-status">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+
+                <span class="terminal-title">
+                    EHLIYETPRO_TRAFFIC_TERMINAL_v3.0
+                </span>
+            </div>
+
+            <div class="clock" id="clock">
+                00:00:00
+            </div>
+
+        </div>
+
+        <!-- TRAFFIC SIGNS -->
+        <div class="sign-panel left">
+            <div class="sign dynamic-sign">30</div>
+            <div class="sign">🛑</div>
+            <div class="sign">🚶</div>
+        </div>
+
+        <div class="sign-panel right">
+            <div class="sign dynamic-sign">50</div>
+            <div class="sign">↩️</div>
+            <div class="sign">100</div>
+        </div>
+
+        <!-- TRAFFIC LIGHT -->
+        <div class="traffic-light-box">
+            <div class="traffic-light">
+                <div class="light red-light active"></div>
+                <div class="light yellow-light"></div>
+                <div class="light green-light"></div>
+            </div>
+        </div>
+
+        <!-- ROAD -->
+        <section class="road-section">
+
+            <div class="vehicles">
+
+                <div class="vehicle car">🚗</div>
+                <div class="vehicle bus">🚌</div>
+                <div class="vehicle truck">🚛</div>
+                <div class="vehicle ambulance">🚑</div>
+
+            </div>
+
+            <div class="road-lines">
+                ---__---__---__---__---__---__---__---__---__---__---
+            </div>
+
+        </section>
+
+        <!-- HERO CONTENT -->
+        <div class="hero-content">
+
+            <div class="ascii-box">
+
+<pre>
+███████╗██╗  ██╗██╗     ██╗██╗   ██╗███████╗████████╗
+██╔════╝██║  ██║██║     ██║╚██╗ ██╔╝██╔════╝╚══██╔══╝
+█████╗  ███████║██║     ██║ ╚████╔╝ █████╗     ██║
+██╔══╝  ██╔══██║██║     ██║  ╚██╔╝  ██╔══╝     ██║
+███████╗██║  ██║███████╗██║   ██║   ███████╗   ██║
+╚══════╝╚═╝  ╚═╝╚══════╝╚═╝   ╚═╝   ╚══════╝   ╚═╝
+</pre>
+
+            </div>
+
+            <h1>Trafik Simülasyonu ve Sınav Hazırlık Portalı</h1>
+
+            <p class="subtitle">
+                Terminal tabanlı modern sürüş deneyimi.
+                Trafik kurallarını öğren, sınava hazırlan,
+                reflekslerini geliştir.
+            </p>
+
+            <div class="action-buttons">
+
+                <button class="main-btn pulse" id="startExam">
+                    🚦 SINAVA BAŞLA
+                </button>
+
+                <button class="secondary-btn" id="hornBtn">
+                    📢 KORNA ÇAL
+                </button>
+
+                <button class="secondary-btn" id="signalBtn">
+                    ↔️ SİNYAL VER
+                </button>
+
+            </div>
+
+            <div class="store-buttons">
+
+                <a href="#" class="store-btn appstore">
+                     App Store
+                </a>
+
+                <a href="#" class="store-btn googleplay">
+                    ▶ Google Play
+                </a>
+
+            </div>
+
+        </div>
+
+    </header>
+
+    <!-- GUIDE SECTION -->
+    <section class="guide-section">
+
+        <h2>📘 Sürücü Rehberi</h2>
+
+        <div class="guide-grid">
+
+            <div class="guide-card">
+                <h3>🪑 Emniyet Kemeri</h3>
+                <p>
+                    Araca binince ilk iş kemerini tak.
+                </p>
+            </div>
+
+            <div class="guide-card">
+                <h3>↔️ Sinyal Kullanımı</h3>
+                <p>
+                    Dönüşlerden önce mutlaka sinyal ver.
+                </p>
+            </div>
+
+            <div class="guide-card">
+                <h3>🪞 Ayna Kontrolü</h3>
+                <p>
+                    Şerit değiştirmeden önce aynaları kontrol et.
+                </p>
+            </div>
+
+            <div class="guide-card">
+                <h3>🚧 Kavşak Kuralları</h3>
+                <p>
+                    Geçiş önceliği kurallarını unutma.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- STATS -->
+    <section class="stats-section">
+
+        <div class="stat-box">
+            <h2 id="studentCount">0</h2>
+            <p>Aktif Öğrenci</p>
+        </div>
+
+        <div class="stat-box">
+            <h2 id="questionCount">0</h2>
+            <p>Sınav Sorusu</p>
+        </div>
+
+        <div class="stat-box">
+            <h2 id="successRate">0%</h2>
+            <p>Başarı Oranı</p>
+        </div>
+
+    </section>
+
+    <!-- TERMINAL -->
+    <section class="terminal-section">
+
+        <div class="terminal-window">
+
+            <div class="terminal-header">
+                TERMINAL_LOGS
+            </div>
+
+            <div class="terminal-content" id="terminalContent">
+
+                > Sistem başlatılıyor...<br>
+                > Trafik verileri yükleniyor...<br>
+                > Simülasyon motoru aktif.<br>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+
+        <div class="footer-grid">
+
+            <div class="footer-card">
+                <h3>📄 Gizlilik Politikası</h3>
+
+                <p>
+                    Kullanıcı verileri güvenli şekilde saklanır.
+                </p>
+            </div>
+
+            <div class="footer-card">
+                <h3>⚖️ Kullanım Koşulları</h3>
+
+                <p>
+                    Platform eğitim amaçlı kullanılmaktadır.
+                </p>
+            </div>
+
+            <div class="footer-card">
+                <h3>🛠️ Sistem Durumu</h3>
+
+                <p class="online">
+                    ● ONLINE
+                </p>
+            </div>
+
+        </div>
+
+        <p class="copyright">
+            © 2026 EhliyetPro Terminal Systems
+        </p>
+
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
+```

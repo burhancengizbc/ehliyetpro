@@ -1,18 +1,22 @@
-body { 
-    background: #2c3e50; color: white; font-family: 'Segoe UI', sans-serif; 
-    display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; margin: 0;
-}
-.traffic-light { 
-    background: #333; padding: 10px; border-radius: 20px; display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px;
-}
-.red, .yellow, .green { width: 40px; height: 40px; border-radius: 50%; background: #555; }
-.green { background: #27ae60; box-shadow: 0 0 20px #27ae60; }
+body { margin: 0; overflow: hidden; background: #27ae60; height: 100vh; display: flex; flex-direction: column; align-items: center; }
 
-.container { background: #34495e; padding: 40px; border-radius: 20px; text-align: center; border: 2px solid #3498db; }
-.road-line { height: 5px; width: 100%; background: repeating-linear-gradient(90deg, #f1c40f, #f1c40f 20px, transparent 20px, transparent 40px); margin: 20px 0; }
+/* Yol ve Animasyon */
+.road { width: 100%; height: 150px; background: #333; position: absolute; bottom: 100px; display: flex; align-items: center; border-top: 5px solid #fff; border-bottom: 5px solid #fff; }
+.road-lines { width: 100%; height: 5px; background: repeating-linear-gradient(90deg, #fff, #fff 50px, transparent 50px, transparent 100px); }
 
-.btn { 
-    display: inline-block; padding: 15px 40px; background: #e74c3c; color: white; 
-    text-decoration: none; border-radius: 50px; font-weight: bold; transition: 0.3s;
-}
-.btn:hover { background: #c0392b; transform: scale(1.1); }
+.car { font-size: 50px; position: absolute; animation: drive linear infinite; }
+.car-1 { animation-duration: 4s; bottom: 100px; }
+.car-2 { animation-duration: 2.5s; bottom: 150px; } /* Ambulans daha hızlı */
+
+@keyframes drive { from { left: -100px; } to { left: 100%; } }
+
+/* UI Arayüz */
+.ui-container { margin-top: 50px; text-align: center; z-index: 10; background: rgba(0,0,0,0.6); padding: 30px; border-radius: 20px; }
+.btn { display: inline-block; padding: 15px 25px; margin: 10px; text-decoration: none; border-radius: 10px; color: white; font-weight: bold; }
+.apple { background: #000; }
+.google { background: #3498db; }
+
+/* Tabelalar */
+.sign { width: 50px; height: 50px; background: white; border: 5px solid red; position: absolute; top: 50px; display: flex; align-items: center; justify-content: center; font-weight: bold; }
+.sign-30 { left: 20%; }
+.sign-100 { right: 20%; border-color: black; }

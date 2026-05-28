@@ -221,12 +221,24 @@ body{
     margin-top:70px;
 }
 
+```css
 .ascii{
     color:#00ff88;
-    font-size:14px;
+    font-size:13px;
     margin-bottom:30px;
     animation:glow 2s infinite alternate;
+
+    line-height:1.25;
+    white-space:pre;
+    overflow-x:auto;
+
+    display:flex;
+    justify-content:center;
+
+    text-align:left;
 }
+```
+
 
 @keyframes glow{
     from{

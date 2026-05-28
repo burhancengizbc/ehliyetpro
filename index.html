@@ -1,101 +1,26 @@
 <!DOCTYPE html>
 <html lang="tr">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EhliyetPro</title>
-
     <link rel="stylesheet" href="style.css">
-
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
-
-    <!-- MATRIX BACKGROUND -->
-    <canvas id="matrix"></canvas>
-
-    <!-- HEADER -->
     <header class="hero">
-
         <div class="overlay"></div>
-
         <div class="topbar">
-
-<div class="terminal-left">
-
-    <span class="dot red"></span>
-    <span class="dot yellow"></span>
-    <span class="dot green"></span>
-
-    <span class="traffic-mini">
-        🚦
-    </span>
-
-</div>
-
-
-
+            <div class="terminal-left">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+                <span class="traffic-mini">🚦</span>
+            </div>
             <div class="clock" id="clock"></div>
-
         </div>
-
-        <!-- SIGNS -->
-        <div class="signs">
-
-            <div class="sign">30</div>
-            <div class="sign">50</div>
-            <div class="sign">🛑</div>
-            <div class="sign">🚶</div>
-            <div class="sign">↩️</div>
-
-        </div>
-
-        <!-- TRAFFIC LIGHT -->
-        <div class="traffic-system">
-
-            <div class="traffic-light">
-
-                <div class="light red-light active"></div>
-                <div class="light yellow-light"></div>
-                <div class="light green-light"></div>
-
-            </div>
-
-        </div>
-
-        <!-- VEHICLES -->
-        <div class="vehicles">
-
-            <div class="vehicle car">🚗</div>
-            <div class="vehicle bus">🚌</div>
-            <div class="vehicle truck">🚛</div>
-            <div class="vehicle ambulance">🚑</div>
-            <div class="vehicle taxi">🚕</div>
-            <div class="vehicle moto">🏍️</div>
-            <div class="vehicle tractor">🚜</div>
-
-        </div>
-
-        <!-- ROAD -->
-        <div class="road-wrapper">
-
-            <div class="road-line">
-                ---__---__---__---__---__---__---__---__---__---
-            </div>
-
-            <div class="road-line second">
-                __---__---__---__---__---__---__---__---__---
-            </div>
-
-        </div>
-
-        <!-- HERO CONTENT -->
         <div class="hero-content">
-
-<pre class="ascii">
+            <pre class="ascii">
 ███████╗██╗  ██╗██╗     ██╗██╗   ██╗███████╗████████╗
 ██╔════╝██║  ██║██║     ██║╚██╗ ██╔╝██╔════╝╚══██╔══╝
 █████╗  ███████║██║     ██║ ╚████╔╝ █████╗     ██║
@@ -108,158 +33,51 @@
 ██╔═══╝ ██╔══██╗██║   ██║
 ██║     ██║  ██║╚██████╔╝
 ╚═╝     ╚═╝  ╚═╝ ╚═════╝
-</pre>
-
-            <h1>
-                TRAFİK SİMÜLASYONU & SINAV PORTALI
-            </h1>
-
-            <p>
-                Trafik kurallarını öğren. Simülasyonda ustalaş.
-                Ehliyet sınavına profesyonel hazırlan.
-            </p>
-
-            
-<div class="buttons">
-
-    <div class="traffic-box green-box">
-        🚦 SINAVA BAŞLA
-    </div>
-
-    <div class="traffic-box yellow-box">
-        📢 KORNA
-    </div>
-
-    <div class="traffic-box red-box">
-        ↔️ SİNYAL
-    </div>
-
-</div>
-```
-
-
-            <div class="stores">
-
-                <a href="#" class="store apple">
-                     App Store
-                </a>
-
-                <a href="#" class="store google">
-                    ▶ Google Play
-                </a>
-
+            </pre>
+            <h1>TRAFİK SİMÜLASYONU & SINAV PORTALI</h1>
+            <p>Trafik kurallarını öğren. Simülasyonda ustalaş. Ehliyet sınavına profesyonel hazırlan.</p>
+            <div class="buttons">
+                <div class="traffic-box green-box">🚦 Trafik ve Çevre</div>
+                <div class="traffic-box yellow-box">🏥 İlk Yardım</div>
+                <div class="traffic-box red-box">🚘 Motor ve Araç Tekniği</div>
             </div>
-
+            <div class="stores">
+                <a href="#" class="store apple"> App Store</a>
+                <a href="#" class="store google">▶ Google Play</a>
+            </div>
         </div>
-
     </header>
 
-    <!-- GUIDE -->
-    <section class="guide">
-
-        <h2>📘 SÜRÜCÜ REHBERİ</h2>
-
-        <div class="cards">
-
-            <div class="card">
-                <h3>🪑 Emniyet Kemeri</h3>
-                <p>Kemeri takmadan aracı hareket ettirme.</p>
-            </div>
-
-            <div class="card">
-                <h3>🪞 Ayna Kontrolü</h3>
-                <p>Şerit değiştirirken aynaları kontrol et.</p>
-            </div>
-
-            <div class="card">
-                <h3>↔️ Sinyal</h3>
-                <p>Dönüşlerden önce mutlaka sinyal ver.</p>
-            </div>
-
-            <div class="card">
-                <h3>🚧 Kavşak</h3>
-                <p>Geçiş önceliği kurallarını unutma.</p>
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- TERMINAL -->
     <section class="terminal-section">
-
         <div class="terminal">
-
-            <div class="terminal-header">
-                TRAFFIC_SYSTEM_LOGS
-            </div>
-
-            <div class="terminal-content" id="terminalContent">
-
-                > Sistem başlatılıyor...<br>
-                > Radar sistemi aktif...<br>
-                > Trafik yoğunluğu hesaplanıyor...<br>
-
-            </div>
-
+            <div class="terminal-header">TRAFFIC_SYSTEM_LOGS</div>
+            <div class="terminal-content" id="terminalContent"></div>
         </div>
-
     </section>
 
-    <!-- FOOTER -->
     <footer>
-
         <div class="footer-grid">
-
             <div class="footer-box">
                 <h3>📄 Gizlilik</h3>
                 <p>Kullanıcı verileri korunmaktadır.</p>
             </div>
-
             <div class="footer-box">
                 <h3>⚖️ Kullanım</h3>
                 <p>Sistem eğitim amaçlıdır.</p>
             </div>
-
             <div class="footer-box">
                 <h3>🟢 Sunucu</h3>
                 <p>ONLINE</p>
             </div>
-
-<div class="socials">
-
-    <h3>İletişim:</h3>
-
-    <div class="social-icons">
-
-        <a href="#">✉️</a>
-        <a href="#">𝕏</a>
-        <a href="#">📘</a>
-        <a href="#">📸</a>
-        <a href="#">🎵</a>
-
-    </div>
-
-    <p class="website-link">
-        JavaScript | burhancengiz.com
-    </p>
-
-</div>
-```
-
-
-            
         </div>
-
-        <p class="copy">
-            © 2026 EhliyetPro
-        </p>
-
+        <div style="text-align: center; margin-top: 50px;">
+            <div class="social-icons" style="justify-content: center; gap: 20px; display: flex; margin-bottom: 20px;">
+                <a href="#">✉️</a> <a href="#">𝕏</a> <a href="#">📘</a> <a href="#">📸</a> <a href="#">🎵</a>
+            </div>
+            <p class="website-link" style="opacity: 0.7; margin-bottom: 10px;">JavaScript | burhancengiz.com</p>
+            <p class="copy" style="opacity: 0.5;">© 2026 EhliyetPro</p>
+        </div>
     </footer>
-
     <script src="script.js"></script>
-
 </body>
-
 </html>
-```

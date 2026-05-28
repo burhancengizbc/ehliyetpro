@@ -1,130 +1,147 @@
 ```html
 <!DOCTYPE html>
 <html lang="tr">
+
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>EhliyetPro | Trafik Terminali</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EhliyetPro</title>
 
     <link rel="stylesheet" href="style.css">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
 
-    <!-- MATRIX BG -->
+    <!-- MATRIX BACKGROUND -->
     <canvas id="matrix"></canvas>
 
     <!-- HEADER -->
     <header class="hero">
 
-        <div class="top-bar">
+        <div class="overlay"></div>
 
-            <div class="terminal-status">
+        <div class="topbar">
+
+            <div class="terminal-left">
                 <span class="dot red"></span>
                 <span class="dot yellow"></span>
                 <span class="dot green"></span>
 
-                <span class="terminal-title">
-                    EHLIYETPRO_TRAFFIC_TERMINAL_v3.0
+                <span class="terminal-name">
+                    EHLIYET_TERMINAL_v4.0
                 </span>
             </div>
 
-            <div class="clock" id="clock">
-                00:00:00
-            </div>
+            <div class="clock" id="clock"></div>
 
         </div>
 
-        <!-- TRAFFIC SIGNS -->
-        <div class="sign-panel left">
-            <div class="sign dynamic-sign">30</div>
+        <!-- SIGNS -->
+        <div class="signs">
+
+            <div class="sign">30</div>
+            <div class="sign">50</div>
             <div class="sign">🛑</div>
             <div class="sign">🚶</div>
-        </div>
-
-        <div class="sign-panel right">
-            <div class="sign dynamic-sign">50</div>
             <div class="sign">↩️</div>
-            <div class="sign">100</div>
+
         </div>
 
         <!-- TRAFFIC LIGHT -->
-        <div class="traffic-light-box">
+        <div class="traffic-system">
+
             <div class="traffic-light">
+
                 <div class="light red-light active"></div>
                 <div class="light yellow-light"></div>
                 <div class="light green-light"></div>
+
             </div>
+
+        </div>
+
+        <!-- VEHICLES -->
+        <div class="vehicles">
+
+            <div class="vehicle car">🚗</div>
+            <div class="vehicle bus">🚌</div>
+            <div class="vehicle truck">🚛</div>
+            <div class="vehicle ambulance">🚑</div>
+            <div class="vehicle taxi">🚕</div>
+            <div class="vehicle moto">🏍️</div>
+            <div class="vehicle tractor">🚜</div>
+
         </div>
 
         <!-- ROAD -->
-        <section class="road-section">
+        <div class="road-wrapper">
 
-            <div class="vehicles">
-
-                <div class="vehicle car">🚗</div>
-                <div class="vehicle bus">🚌</div>
-                <div class="vehicle truck">🚛</div>
-                <div class="vehicle ambulance">🚑</div>
-
+            <div class="road-line">
+                ---__---__---__---__---__---__---__---__---__---
             </div>
 
-            <div class="road-lines">
-                ---__---__---__---__---__---__---__---__---__---__---
+            <div class="road-line second">
+                __---__---__---__---__---__---__---__---__---
             </div>
 
-        </section>
+        </div>
 
         <!-- HERO CONTENT -->
         <div class="hero-content">
 
-            <div class="ascii-box">
+<pre class="ascii">
 
-<pre>
 ███████╗██╗  ██╗██╗     ██╗██╗   ██╗███████╗████████╗
 ██╔════╝██║  ██║██║     ██║╚██╗ ██╔╝██╔════╝╚══██╔══╝
 █████╗  ███████║██║     ██║ ╚████╔╝ █████╗     ██║
 ██╔══╝  ██╔══██║██║     ██║  ╚██╔╝  ██╔══╝     ██║
 ███████╗██║  ██║███████╗██║   ██║   ███████╗   ██║
 ╚══════╝╚═╝  ╚═╝╚══════╝╚═╝   ╚═╝   ╚══════╝   ╚═╝
+
+██████╗ ██████╗  ██████╗
+██╔══██╗██╔══██╗██╔═══██╗
+██████╔╝██████╔╝██║   ██║
+██╔═══╝ ██╔══██╗██║   ██║
+██║     ██║  ██║╚██████╔╝
+╚═╝     ╚═╝  ╚═╝ ╚═════╝
+
 </pre>
 
-            </div>
+            <h1>
+                TRAFİK SİMÜLASYONU & SINAV PORTALI
+            </h1>
 
-            <h1>Trafik Simülasyonu ve Sınav Hazırlık Portalı</h1>
-
-            <p class="subtitle">
-                Terminal tabanlı modern sürüş deneyimi.
-                Trafik kurallarını öğren, sınava hazırlan,
-                reflekslerini geliştir.
+            <p>
+                Trafik kurallarını öğren. Simülasyonda ustalaş.
+                Ehliyet sınavına profesyonel hazırlan.
             </p>
 
-            <div class="action-buttons">
+            <div class="buttons">
 
-                <button class="main-btn pulse" id="startExam">
+                <button class="main-btn" id="startBtn">
                     🚦 SINAVA BAŞLA
                 </button>
 
-                <button class="secondary-btn" id="hornBtn">
-                    📢 KORNA ÇAL
+                <button class="sub-btn" id="hornBtn">
+                    📢 KORNA
                 </button>
 
-                <button class="secondary-btn" id="signalBtn">
-                    ↔️ SİNYAL VER
+                <button class="sub-btn" id="signalBtn">
+                    ↔️ SİNYAL
                 </button>
 
             </div>
 
-            <div class="store-buttons">
+            <div class="stores">
 
-                <a href="#" class="store-btn appstore">
+                <a href="#" class="store apple">
                      App Store
                 </a>
 
-                <a href="#" class="store-btn googleplay">
+                <a href="#" class="store google">
                     ▶ Google Play
                 </a>
 
@@ -134,61 +151,33 @@
 
     </header>
 
-    <!-- GUIDE SECTION -->
-    <section class="guide-section">
+    <!-- GUIDE -->
+    <section class="guide">
 
-        <h2>📘 Sürücü Rehberi</h2>
+        <h2>📘 SÜRÜCÜ REHBERİ</h2>
 
-        <div class="guide-grid">
+        <div class="cards">
 
-            <div class="guide-card">
+            <div class="card">
                 <h3>🪑 Emniyet Kemeri</h3>
-                <p>
-                    Araca binince ilk iş kemerini tak.
-                </p>
+                <p>Kemeri takmadan aracı hareket ettirme.</p>
             </div>
 
-            <div class="guide-card">
-                <h3>↔️ Sinyal Kullanımı</h3>
-                <p>
-                    Dönüşlerden önce mutlaka sinyal ver.
-                </p>
-            </div>
-
-            <div class="guide-card">
+            <div class="card">
                 <h3>🪞 Ayna Kontrolü</h3>
-                <p>
-                    Şerit değiştirmeden önce aynaları kontrol et.
-                </p>
+                <p>Şerit değiştirirken aynaları kontrol et.</p>
             </div>
 
-            <div class="guide-card">
-                <h3>🚧 Kavşak Kuralları</h3>
-                <p>
-                    Geçiş önceliği kurallarını unutma.
-                </p>
+            <div class="card">
+                <h3>↔️ Sinyal</h3>
+                <p>Dönüşlerden önce mutlaka sinyal ver.</p>
             </div>
 
-        </div>
+            <div class="card">
+                <h3>🚧 Kavşak</h3>
+                <p>Geçiş önceliği kurallarını unutma.</p>
+            </div>
 
-    </section>
-
-    <!-- STATS -->
-    <section class="stats-section">
-
-        <div class="stat-box">
-            <h2 id="studentCount">0</h2>
-            <p>Aktif Öğrenci</p>
-        </div>
-
-        <div class="stat-box">
-            <h2 id="questionCount">0</h2>
-            <p>Sınav Sorusu</p>
-        </div>
-
-        <div class="stat-box">
-            <h2 id="successRate">0%</h2>
-            <p>Başarı Oranı</p>
         </div>
 
     </section>
@@ -196,17 +185,17 @@
     <!-- TERMINAL -->
     <section class="terminal-section">
 
-        <div class="terminal-window">
+        <div class="terminal">
 
             <div class="terminal-header">
-                TERMINAL_LOGS
+                TRAFFIC_SYSTEM_LOGS
             </div>
 
             <div class="terminal-content" id="terminalContent">
 
                 > Sistem başlatılıyor...<br>
-                > Trafik verileri yükleniyor...<br>
-                > Simülasyon motoru aktif.<br>
+                > Radar sistemi aktif...<br>
+                > Trafik yoğunluğu hesaplanıyor...<br>
 
             </div>
 
@@ -219,34 +208,25 @@
 
         <div class="footer-grid">
 
-            <div class="footer-card">
-                <h3>📄 Gizlilik Politikası</h3>
-
-                <p>
-                    Kullanıcı verileri güvenli şekilde saklanır.
-                </p>
+            <div class="footer-box">
+                <h3>📄 Gizlilik</h3>
+                <p>Kullanıcı verileri korunmaktadır.</p>
             </div>
 
-            <div class="footer-card">
-                <h3>⚖️ Kullanım Koşulları</h3>
-
-                <p>
-                    Platform eğitim amaçlı kullanılmaktadır.
-                </p>
+            <div class="footer-box">
+                <h3>⚖️ Kullanım</h3>
+                <p>Sistem eğitim amaçlıdır.</p>
             </div>
 
-            <div class="footer-card">
-                <h3>🛠️ Sistem Durumu</h3>
-
-                <p class="online">
-                    ● ONLINE
-                </p>
+            <div class="footer-box">
+                <h3>🟢 Sunucu</h3>
+                <p>ONLINE</p>
             </div>
 
         </div>
 
-        <p class="copyright">
-            © 2026 EhliyetPro Terminal Systems
+        <p class="copy">
+            © 2026 EhliyetPro
         </p>
 
     </footer>
@@ -254,5 +234,6 @@
     <script src="script.js"></script>
 
 </body>
+
 </html>
 ```

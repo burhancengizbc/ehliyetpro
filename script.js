@@ -5,10 +5,9 @@ function updateClock(){
 
     const now = new Date();
 
-    const time =
-        now.toLocaleTimeString("tr-TR");
-
-    document.getElementById("clock").innerText = time;
+    document.getElementById("clock")
+    .innerText =
+    now.toLocaleTimeString("tr-TR");
 }
 
 setInterval(updateClock,1000);
@@ -24,196 +23,118 @@ const lights = [
     "green-light"
 ];
 
-let currentLight = 0;
+let current = 0;
 
 setInterval(()=>{
 
     document
-        .querySelectorAll(".light")
-        .forEach(light=>light.classList.remove("active"));
+    .querySelectorAll(".light")
+    .forEach(light=>light.classList.remove("active"));
 
     document
-        .querySelector(`.${lights[currentLight]}`)
-        .classList.add("active");
+    .querySelector(`.${lights[current]}`)
+    .classList.add("active");
 
-    currentLight++;
+    current++;
 
-    if(currentLight >= lights.length){
-        currentLight = 0;
+    if(current >= lights.length){
+        current = 0;
     }
 
 },5000);
-
-
-// DYNAMIC SIGNS
-
-const signs = [
-    "30",
-    "50",
-    "100",
-    "🛑",
-    "🚶",
-    "↩️"
-];
-
-setInterval(()=>{
-
-    document
-        .querySelectorAll(".dynamic-sign")
-        .forEach(sign=>{
-
-            const random =
-                signs[Math.floor(Math.random()*signs.length)];
-
-            sign.innerText = random;
-
-        });
-
-},3000);
 
 
 // TERMINAL LOGS
 
 const logs = [
 
-    "> Radar sistemi aktif.",
-    "> Yeni sınav modülü yüklendi.",
-    "> Gece sürüş simülasyonu hazır.",
-    "> Trafik yoğunluğu hesaplanıyor.",
-    "> Kavşak analiz sistemi aktif.",
-    "> Şerit takip sistemi çalışıyor.",
-    "> Sürücü refleks testi başlatıldı."
+    "> Trafik akışı yoğunlaşıyor...",
+    "> Ambulans için yol açılıyor...",
+    "> Radar sistemi aktif...",
+    "> Şerit takip sistemi çalışıyor...",
+    "> Sinyalizasyon kontrol ediliyor...",
+    "> Araç takip mesafesi uygun...",
+    "> Gece sürüş modu aktif...",
+    "> Kavşak kontrol sistemi devrede..."
 
 ];
 
 const terminal =
-    document.getElementById("terminalContent");
+document.getElementById("terminalContent");
 
 setInterval(()=>{
 
     const random =
-        logs[Math.floor(Math.random()*logs.length)];
+    logs[Math.floor(Math.random()*logs.length)];
 
     terminal.innerHTML += random + "<br>";
 
     terminal.scrollTop =
-        terminal.scrollHeight;
+    terminal.scrollHeight;
 
 },2500);
 
 
-// COUNTER ANIMATION
-
-function animateCounter(id,target,suffix=""){
-
-    let count = 0;
-
-    const element =
-        document.getElementById(id);
-
-    const increment =
-        target / 120;
-
-    const interval =
-        setInterval(()=>{
-
-            count += increment;
-
-            if(count >= target){
-
-                count = target;
-
-                clearInterval(interval);
-            }
-
-            element.innerText =
-                Math.floor(count) + suffix;
-
-        },20);
-
-}
-
-animateCounter("studentCount",25000);
-animateCounter("questionCount",5200);
-animateCounter("successRate",98,"%");
-
-
-// HORN EFFECT
+// BUTTON EFFECTS
 
 document
 .getElementById("hornBtn")
 .addEventListener("click",()=>{
 
-    document.body.classList.add("flash");
+    document.body.style.filter =
+    "brightness(1.2)";
 
     setTimeout(()=>{
-        document.body.classList.remove("flash");
-    },400);
+
+        document.body.style.filter =
+        "brightness(1)";
+
+    },200);
 
     alert("📢 BİP BİP!");
+
 });
 
-
-// SIGNAL EFFECT
 
 document
 .getElementById("signalBtn")
 .addEventListener("click",()=>{
 
     document
-        .querySelectorAll(".vehicle")
-        .forEach(vehicle=>{
+    .querySelectorAll(".vehicle")
+    .forEach(vehicle=>{
 
-            vehicle.style.filter =
-                "drop-shadow(0 0 20px orange)";
+        vehicle.style.filter =
+        "drop-shadow(0 0 20px orange)";
 
-        });
+    });
 
     setTimeout(()=>{
 
         document
-            .querySelectorAll(".vehicle")
-            .forEach(vehicle=>{
+        .querySelectorAll(".vehicle")
+        .forEach(vehicle=>{
 
-                vehicle.style.filter = "none";
+            vehicle.style.filter =
+            "drop-shadow(0 0 12px rgba(255,255,255,.5))";
 
-            });
+        });
 
     },1200);
 
 });
 
 
-// SCROLL SPEED EFFECT
+// SCROLL EFFECT
 
 window.addEventListener("scroll",()=>{
 
     const scroll =
-        window.scrollY;
+    window.scrollY;
 
-    const speed =
-        Math.min(scroll / 100,8);
-
-    document
-        .querySelector(".car")
-        .style.animationDuration =
-            `${12 - speed}s`;
-
-    document
-        .querySelector(".ambulance")
-        .style.animationDuration =
-            `${6 - speed/2}s`;
-
-});
-
-
-// START BUTTON
-
-document
-.getElementById("startExam")
-.addEventListener("click",()=>{
-
-    alert("🚦 Sınav Simülatörü Başlatılıyor...");
+    document.querySelector(".hero")
+    .style.transform =
+    `translateY(${scroll * .08}px)`;
 
 });
 
@@ -221,36 +142,36 @@ document
 // MATRIX EFFECT
 
 const canvas =
-    document.getElementById("matrix");
+document.getElementById("matrix");
 
 const ctx =
-    canvas.getContext("2d");
+canvas.getContext("2d");
 
 canvas.width =
-    window.innerWidth;
+window.innerWidth;
 
 canvas.height =
-    window.innerHeight;
+window.innerHeight;
 
 const letters =
-    "01アイウエオカキクケコサシスセソABCDEFGHIJKLMNOPQRSTUVWXYZ";
+"アイウエオカキクケコ0123456789";
 
-const fontSize = 14;
+const fontSize = 16;
 
 const columns =
-    canvas.width / fontSize;
+canvas.width / fontSize;
 
 const drops = [];
 
-for(let x=0; x<columns; x++){
+for(let i=0; i<columns; i++){
 
-    drops[x] = 1;
+    drops[i] = 1;
 }
 
 function draw(){
 
     ctx.fillStyle =
-        "rgba(0,0,0,0.05)";
+    "rgba(0,0,0,0.05)";
 
     ctx.fillRect(
         0,
@@ -260,19 +181,19 @@ function draw(){
     );
 
     ctx.fillStyle =
-        "#00ff88";
+    "#00ff88";
 
     ctx.font =
-        fontSize + "px monospace";
+    fontSize + "px monospace";
 
     for(let i=0; i<drops.length; i++){
 
         const text =
-            letters[
-                Math.floor(
-                    Math.random()*letters.length
-                )
-            ];
+        letters[
+            Math.floor(
+                Math.random()*letters.length
+            )
+        ];
 
         ctx.fillText(
             text,
@@ -283,9 +204,8 @@ function draw(){
         if(
             drops[i]*fontSize >
             canvas.height &&
-            Math.random() > 0.975
+            Math.random() > .975
         ){
-
             drops[i] = 0;
         }
 
@@ -298,10 +218,10 @@ setInterval(draw,35);
 window.addEventListener("resize",()=>{
 
     canvas.width =
-        window.innerWidth;
+    window.innerWidth;
 
     canvas.height =
-        window.innerHeight;
+    window.innerHeight;
 
 });
 ```

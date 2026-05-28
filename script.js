@@ -46,18 +46,40 @@ setInterval(()=>{
 
 // TERMINAL LOGS
 
+```javascript
 const logs = [
 
-    "> Trafik akışı yoğunlaşıyor...",
-    "> Ambulans için yol açılıyor...",
-    "> Radar sistemi aktif...",
-    "> Şerit takip sistemi çalışıyor...",
-    "> Sinyalizasyon kontrol ediliyor...",
-    "> Araç takip mesafesi uygun...",
-    "> Gece sürüş modu aktif...",
-    "> Kavşak kontrol sistemi devrede..."
+"> Motor yağı seviyesi kontrol ediliyor...",
+"> Lastik hava basınçları ideal seviyede.",
+"> Fren hidroliği güvenli aralıkta.",
+"> Far sistemi test edildi.",
+"> Stop lambaları çalışıyor.",
+"> Silecek mekanizması aktif.",
+"> Emniyet kemeri takıldı.",
+"> Sürücü koltuğu ayarlandı.",
+"> Dikiz aynaları kontrol edildi.",
+"> Yan aynalar optimize edildi.",
+"> Gösterge paneli aktif.",
+"> Tüm uyarı ışıkları söndü.",
+"> Yakıt seviyesi yeterli.",
+"> ABS sistemi çalışıyor.",
+"> El freni kontrol edildi.",
+"> Direksiyon tepkileri normal.",
+"> Klima sistemi aktif.",
+"> Navigasyon sistemi hazır.",
+"> Şerit takip sistemi devrede.",
+"> Çevresel görüş sensörleri aktif.",
+"> Radar taraması tamamlandı.",
+"> Trafik yoğunluğu analiz ediliyor...",
+"> Güvenli sürüş modu etkin.",
+"> Kavşak geçiş sistemi hazır.",
+"> Sürüş simülasyonu başlatılıyor...",
+"> Tüm sistemler stabil çalışıyor.",
+"> Araç sürüşe hazır. ✔"
 
 ];
+```
+
 
 const terminal =
 document.getElementById("terminalContent");

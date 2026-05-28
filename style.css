@@ -450,3 +450,84 @@ footer{
 
 }
 ```
+
+```css
+/* =====================================
+   TRAFFIC BOXES
+===================================== */
+
+.traffic-box{
+    padding:18px 34px;
+    border-radius:16px;
+    font-size:18px;
+    font-weight:bold;
+
+    animation:trafficPulse 1.5s infinite;
+
+    box-shadow:
+    0 0 20px rgba(255,255,255,.2);
+
+    user-select:none;
+
+    cursor:default;
+
+    transition:.3s;
+
+    border:2px solid rgba(255,255,255,.15);
+}
+
+.green-box{
+    background:#00c853;
+    color:white;
+}
+
+.yellow-box{
+    background:#ffd600;
+    color:black;
+}
+
+.red-box{
+    background:#ff1744;
+    color:white;
+}
+
+@keyframes trafficPulse{
+
+    0%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.06);
+    }
+
+    100%{
+        transform:scale(1);
+    }
+}
+
+/* STORE BUTTONS */
+
+.apple{
+    background:#ff1744;
+    color:white !important;
+
+    animation:storeGlow 1.6s infinite;
+}
+
+.google{
+    background:#00c853;
+    color:white !important;
+
+    animation:storeGlow 1.6s infinite;
+}
+
+@keyframes storeGlow{
+
+    50%{
+        transform:translateY(-5px) scale(1.05);
+        box-shadow:0 0 25px rgba(255,255,255,.35);
+    }
+}
+```
+

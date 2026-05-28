@@ -79,6 +79,47 @@ const logs = [
 
 ];
 ```
+```javascript
+terminal.innerHTML = "";
+
+let logIndex = 0;
+
+function typeLogs(){
+
+    if(logIndex >= logs.length) return;
+
+    let text = logs[logIndex];
+
+    let i = 0;
+
+    let line = document.createElement("div");
+
+    terminal.appendChild(line);
+
+    const typing = setInterval(()=>{
+
+        line.innerHTML += text.charAt(i);
+
+        i++;
+
+        terminal.scrollTop = terminal.scrollHeight;
+
+        if(i >= text.length){
+
+            clearInterval(typing);
+
+            logIndex++;
+
+            setTimeout(typeLogs,180);
+
+        }
+
+    },18);
+
+}
+
+typeLogs();
+```
 
 
 const terminal =

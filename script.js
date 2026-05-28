@@ -44,9 +44,9 @@ setInterval(()=>{
 },5000);
 
 
+```javascript
 // TERMINAL LOGS
 
-```javascript
 const logs = [
 
 "> Motor yağı seviyesi kontrol ediliyor...",
@@ -78,8 +78,10 @@ const logs = [
 "> Araç sürüşe hazır. ✔"
 
 ];
-```
-```javascript
+
+const terminal =
+document.getElementById("terminalContent");
+
 terminal.innerHTML = "";
 
 let logIndex = 0;
@@ -93,6 +95,8 @@ function typeLogs(){
     let i = 0;
 
     let line = document.createElement("div");
+
+    line.classList.add("terminal-line");
 
     terminal.appendChild(line);
 
@@ -120,6 +124,7 @@ function typeLogs(){
 
 typeLogs();
 ```
+
 
 
 const terminal =

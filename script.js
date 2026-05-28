@@ -143,56 +143,6 @@ setInterval(()=>{
 },2500);
 
 
-// BUTTON EFFECTS
-
-document
-.getElementById("hornBtn")
-.addEventListener("click",()=>{
-
-    document.body.style.filter =
-    "brightness(1.2)";
-
-    setTimeout(()=>{
-
-        document.body.style.filter =
-        "brightness(1)";
-
-    },200);
-
-    alert("📢 BİP BİP!");
-
-});
-
-
-document
-.getElementById("signalBtn")
-.addEventListener("click",()=>{
-
-    document
-    .querySelectorAll(".vehicle")
-    .forEach(vehicle=>{
-
-        vehicle.style.filter =
-        "drop-shadow(0 0 20px orange)";
-
-    });
-
-    setTimeout(()=>{
-
-        document
-        .querySelectorAll(".vehicle")
-        .forEach(vehicle=>{
-
-            vehicle.style.filter =
-            "drop-shadow(0 0 12px rgba(255,255,255,.5))";
-
-        });
-
-    },1200);
-
-});
-
-
 // SCROLL EFFECT
 
 window.addEventListener("scroll",()=>{
